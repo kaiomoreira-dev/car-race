@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation timing funcion</title>
+    <style>
+        body{
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            
+            overflow: hidden;
+            box-sizing: border-box;
+
+            
+
+        }
+        .cars-group{
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            padding-left: 10px;
+            position: absolute;
+
+        }       
+        .car{
+            display: flex;
+            flex-direction: column;
+            width: 70px;
+            margin-top: 10px;
+
+            position: relative;
+
+            animation-name: carsRun;
+            animation-duration: 5s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+           
+        }
+        .car p{
+            background-color: black;
+            text-align: center;
+            margin: 0;
+            width: 150px;
+            color: white;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .car img {
+            height: 80px;
+        }      
+      
+
+        .linear{
+            animation-timing-function: linear;
+
+        }
+        .ease{
+            animation-timing-function: ease;
+
+        }
+        .ease-in{
+            animation-timing-function: ease-in;
+
+        }
+        .ease-out{
+            animation-timing-function: ease-out;
+
+        }
+        .ease-in-out{
+            animation-timing-function: ease-in-out;
+
+        }
+        .cubic-bazer{
+            animation-timing-function: cubic-bezier(0.1, 0.1, 0.1, 1);
+
+        }
+        .pista img{
+            height: 100vh;
+        }
+        
+
+        @keyframes carsRun{
+            from{
+                top:0;
+                left: 0;
+            }
+            to{
+                top:0;
+                left: calc(100vw - 180px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cars-group">
+
+        <div class="car linear">
+            <p>LINEAR</p>
+            <img src="./img/carro-esporte.png" alt="">
+        </div>
+        <div class="car ease">
+            <p>EASE</p>
+            <img src="./img/carro-compacto.png"  alt="">
+        </div>
+        <div class="car ease-in">
+            <p>EASE-IN</p>
+            <img src="./img/carro-suv.png"  alt="">
+        </div>
+        <div class="car ease-out">
+            <p>EASE-OUT</p>
+            <img src="img/suv.png"  alt="">
+        </div>
+        <div class="car ease-in-out">
+            <p>EASE-IN-OUT</p>
+            <img src="img/carro-conversivel.png"  alt="">
+        </div>
+        <div class="car cubic-bazer">
+            <p>CUBIC-BAZER</p>
+            <img src="img/carro-azul.png"  alt="">
+        </div>
+    </div>
+      <div class="pista"><img id="pist-fundo" src="img/pista.jpg" alt=""></div>
+
+</body>
+</html>
